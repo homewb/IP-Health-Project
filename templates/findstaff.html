@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="span7 center" style="height:550px;">
+			<section>
+				<div class="search" style="position: relative">
+					<!--<input ng-model="query" placeholder="Search for artists" autofocus>-->
+					<input ng-model="query" style="width: 95%; height: 30px" type="text" class="search-query" placeholder="Search Staff" clear-input clear-btn-markup="<span style='position:absolute; right:10px; top:9px'><i class='icon-remove-sign icon-large
+'></i></span>">
+				</div>
+				<ul class="list-group" ng-show="query" style="margin: 0 3% 9px 3%; max-height: 500px; overflow: scroll">
+					<a href="#/home/findstaff/{{employees.indexOf(item)}}" ng-animate="'animate'" class="list-group-item" ng-repeat="item in employees | filter: query">
+							<!--        <img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}">-->
+							<div class="info" style="color: #999999">
+								<h3>{{item.name}}</h3>
+								<h5>{{item.position}}</h5>
+								<h5>{{item.department}}</h5>
+							</div>
+					</a>
+				</ul>
+			</section>
+		<!--<div class="info-box " style="height: 300px"></div>-->
+
+	</div>
+	<div class="div_text_shadow" style="position: static; text-align: center; top:200px; ">Type in any staff information</div>
+
+</div>

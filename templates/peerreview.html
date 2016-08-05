@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-header">
+            <i class="icon-group"></i>
+            <h3>Peer Review</h3>
+        </div> <!-- /widget-header -->
+        <div class="widget-content">
+
+            <!-- new version -->
+            <tabset justified="true">
+                <tab ng-repeat="group in myGroups" active="group.active" ng-click="reload(group)">
+                    <tab-heading>{{group.grouptittle}}<span class="badge" style="margin-left: 10px" ng-show="group.incomplete != 0">{{group.incomplete}}</span></tab-heading>
+                    <br>
+                    <div class="tab-content" ng-hide="submitted">
+                        <div class="panel panel-default" >
+                            <div class="panel-heading">{{myReview.title}}</div>
+                            <div class="panel-body" >
+                                {{myReview.description}}
+                            </div>
+                            <style>
+                                #reviewTable .name{
+                                    padding-left: 15px;
+                                    vertical-align: middle;
+                                }
+                            </style>
+                            <form name="form" novalidate>
+                                <table id="reviewTable" class="table">
+                                    <tr style="border-top:1px solid #e1e1e1;" ng-repeat="row in myReview.rows">
+                                        <th class="span2 name" >{{row.firstname}} {{row.lastname}}</th>
+                                        <td style="text-align: center" class="span3">
+                                            <rating ng-model="row.reviewdata" max="5" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" rating-required></rating>
+                                        </td>
+                                        <td class="span7">
+                                            <textarea style="resize: vertical" class="no-margin span7" ng-model="row.reviewcomment" placeholder="Please write review here" required></textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                        <div class="form-actions">
+                            <!--<button class="btn btn-primary pull-right" ng-click="next()">Next  <i class="icon-caret-right "></i></button>-->
+                            <button class="btn btn-primary pull-right" data-placement="center" data-animation="am-fade-and-scale" data-template="templates/dialogs/empReviewSubmitModal.html" ng-disabled="form.$invalid" bs-modal="modal">Next  <i class="icon-caret-right "></i></button>
+                        </div>
+                    </div>
+                    <div class="well well-large div_text_shadow" ng-show="submitted" >
+                        You have completed all the reviews of this group, thank you!
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>

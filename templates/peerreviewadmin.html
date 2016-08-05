@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-header">
+                <i class="icon-user"></i>
+                <h3>Peer Reveiw Admin</h3>
+            </div> <!-- /widget-header -->
+            <div class="widget-content">
+                <!--<canvas id="bar" class="chart chart-bar" data="data" labels="labels"></canvas>-->
+
+                        <!--<admin-peer-review></admin-peer-review>-->
+                <tabset justified="true">
+                    <tab ng-repeat="group in myGroups" active="group.active" ng-click="reload(group.groupid);select()">
+                        <tab-heading>
+                            {{group.grouptittle}}
+                        </tab-heading>
+                        <span class="pull-right " ><i class="icon-gear " ng-click="$parent.setEdit(true)" style="font-size: 2em; cursor: pointer; position:relative; z-index: 33" data-animation="am-fade-and-slide-top" data-template="templates/dialogs/addReviewGroupModal.html" bs-modal="modal"></i></span>
+
+
+                    </tab>
+
+                    <ul class="nav nav-tabs" style="border: 0; margin:0" role="tablist">
+                        <li><a data-animation="am-fade-and-slide-top" data-template="templates/dialogs/addReviewGroupModal.html" data-backdrop="static" bs-modal="modal"  ng-click="$parent.setEdit(false)"><i class="icon-plus"></i></a></li>
+                    </ul>
+                </tabset>
+                <div id="overview" google-chart chart="chartObject" style="width: 100%"></div>
+                <!--<canvas id="bar" class="chart chart-bar" data="data" labels="labels"></canvas>-->
+
+                <table st-table="displayedCollection" st-safe-src="myTableData" class="table table-hover" >
+                    <thead>
+                    <tr>
+                        <th class="span3">Name</th>
+                        <th ng-repeat="title in myTableTitle" >{{title.performancetypename}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr class="animate-repeat" ng-repeat="row in displayedCollection">
+                        <th scope="row">{{row.empname}}</th>
+                        <td ng-repeat="column in row.columns">
+                            <!-- Wrong logical expression -->
+                            <!-- <button ng-click="setIndexPath(row, column)" class="btn" data-trigger="hover"  data-title="Click to see more and give feedbacks" bs-tooltip>
+                                <a style="color:inherit;" ng-href="#/home/peerreviewadmin/{{row.empid}}&{{currentGroup}}&{{column.kpi_id}}">
+                                    {{column.avgValue}}
+                                </a>
+                            </button> -->
+
+                            <a class="btn" data-trigger="hover"  data-title="Click to see more and give feedbacks" bs-tooltip ng-href="#/home/peerreviewadmin/{{row.empid}}&{{currentGroup}}&{{column.kpi_id}}">
+                                {{column.avgValue}}
+                            </a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

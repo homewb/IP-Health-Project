@@ -1,0 +1,92 @@
+<div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="addReviewGroupModalCtrl">
+    <form name="form" class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+    <!--<h4 class="modal-title" id="myModalLabel">Adding new performace group</h4>-->
+    <input name="field" required placeholder="New Group Name" style="width:50%" ng-model="groupName">
+    </div>
+    <div class="modal-body" >
+        <div class="container">
+        <select
+                ng-model="model"
+                ng-options="obj.id as obj.text for obj in list"
+                multiple
+                bs-duallistbox
+                bootstrap2="{{ settings.bootstrap2 }}"
+
+                move-on-select="{{ settings.moveOnSelect }}"
+                preserve-selection="{{ settings.preserveSelection }}"
+
+                move-selected-label="{{ settings.moveSelectedLabel }}"
+                move-all-label="{{ settings.moveAllLabel }}"
+                remove-selected-label="{{ settings.removeSelectedLabel }}"
+                remove-all-label="{{ settings.removeAllLabel }}"
+
+                non-selected-list-label="{{ settings.nonSelectedListLabel }}"
+                selected-list-label="{{ settings.selectedListLabel }}"
+
+                postfix="{{ settings.postfix }}"
+                select-min-height="{{ settings.selectMinHeight }}"
+
+                filter="{{ settings.filter }}"
+                filter-values="{{ settings.filterValues }}"
+        <!--filter-non-selected="settings.filterNonSelected"-->
+        <!--filter-selected="settings.filterSelected"-->
+        filter-placeholder="{{ settings.filterPlaceholder }}"
+        filter-clear="{{ settings.filterClear }}"
+        info-all="{{ settings.infoAll }}"
+        <!--info-filtered="{{ settings.infoFiltered }}"-->
+        info-empty="{{ settings.infoEmpty }}"
+        >
+        </select>
+        <!--<div class="row">-->
+        <!--<button class="btn btn-large" ng-click="reset()">Reset</button>-->
+        <!--<button class="btn btn-large" ng-click="add()">Add</button>-->
+        <!--</div>-->
+    </div>
+    <label>Add Date</label>
+    <div class="form-group" >
+        <div class="form-group input-append" style="display: inline-block;">
+            <label class="control-label">Start Date</label>
+            <input name="field" required class="form-control no-margin span2" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="YYYY-MM-dd"  data-date-format="yyyy-MM-dd" bs-datepicker>
+            <span  class="add-on" ><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+        <div class="form-group input-append" style="display: inline-block;">
+            <label class="control-label">End Date</label>
+            <input name="field" required class="form-control no-margin span2" ng-model="untilDate" data-min-date="{{fromDate}}"  placeholder="YYYY-MM-dd" data-date-format="yyyy-MM-dd" bs-datepicker>
+            <span  class="add-on" ><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+    </div>
+    <label>Add/Edit Task</label>
+
+    <div class="row-item" ng-repeat="kpi in kpis">
+            <input name="field" required ng-model="kpi.performancetypename" placeholder="KPI Name"  style="display: inline-block; width: 20%">
+            <textarea ng-model="kpi.performancedescription" rows="1" class="no-margin" placeholder="KPI Description" style="display: inline-block; width: 50%; resize: vertical">fdsfa</textarea>
+            <span ng-if="$index+1<=kpiCount" ng-click="deleteRowItem($index)" style="position: relative; top:4px; left:5px"><i class="icon-minus-sign" style="font-size: 2em"></i></span>
+            <span ng-if="$index+1>=kpiCount" ng-click="addRowItem()" style="position: relative; top:4px; left:5px"><i class="icon-plus-sign" style="font-size: 2em"></i></span>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger pull-left" ng-click="deleteGroup();$hide()" ng-show="isEdit">Delete Group</button>
+    <button class="btn btn-primary" ng-disabled="form.field.$error.required" ng-click="saveGroup();$hide()">Save</button>
+    <button class="btn btn-warning" ng-click="$hide()">Cancel</button>
+</div>
+</div>
+</form>
+    </div>
+
+
+<!--<script>-->
+    <!--function addRowItem(context){-->
+        <!--var newRowItem=$(context).parent().clone();-->
+        <!--newRowItem.find("textarea").css("height","");-->
+        <!--$(context).html("<i class='icon-minus-sign' style='font-size: 2em'></i>")-->
+        <!--$(context).attr("onclick","deleteRowItem(this)")-->
+        <!--$(context).parent().parent().append(newRowItem)-->
+    <!--}-->
+    <!--function deleteRowItem(context){-->
+        <!--$(context).parent().remove()-->
+    <!--}-->
+
+<!--</script>-->

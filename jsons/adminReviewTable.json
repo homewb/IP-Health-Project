@@ -1,0 +1,195 @@
+{
+	"state": true,
+	"titles": ["name","Coding Style", "Communication", "Code Efficiency", "Creativity"],
+	"data":
+		{
+			"rows": [
+				{
+					"name": "Jonathan Ive", 
+					"empid":"1",
+					"columns": [
+						{
+							"column_id": "10001", 
+							"avgValue": "2",
+							"status": "approved", 
+							"feedback":"good"
+						},
+						{
+							"column_id": "10002",
+							"avgValue": "4",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10003",
+							"avgValue": "3",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10004",
+							"avgValue": "5",
+							"status": "pending", 
+							"feedback":""
+						}
+					]
+				},
+
+				{
+					"name": "Tim Cook", 
+					"empid":"2",
+					"columns": [
+						{
+							"column_id": "10001", 
+							"avgValue": "4",
+							"status": "approved", 
+							"feedback":""
+						},
+						{
+							"column_id": "10002",
+							"avgValue": "2",
+							"status": "approved", 
+							"feedback":""
+						},
+						{
+							"column_id": "10003",
+							"avgValue": "3",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10004",
+							"avgValue": "1",
+							"status": "pending", 
+							"feedback":""
+						}
+					]
+				},
+
+				{
+					"name": "Amitabh Bachchan", 
+					"empid":"3",
+					"columns": [
+						{
+							"column_id": "10001", 
+							"avgValue": "2",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10002",
+							"avgValue": "4",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10003",
+							"avgValue": "5",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10004",
+							"avgValue": "5",
+							"status": "pending", 
+							"feedback":""
+						}
+					]
+				},
+
+				{
+					"name": "Min-hen Law", 
+					"empid":"4",
+					"columns": [
+						{
+							"column_id": "10001", 
+							"avgValue": "3",
+							"status": "approved", 
+							"feedback":""
+						},
+						{
+							"column_id": "10002",
+							"avgValue": "3",
+							"status": "approved", 
+							"feedback":""
+						},
+						{
+							"column_id": "10003",
+							"avgValue": "4",
+							"status": "approved", 
+							"feedback":""
+						},
+						{
+							"column_id": "10004",
+							"avgValue": "4",
+							"status": "approved", 
+							"feedback":""
+						}
+					]
+				},
+
+				{
+					"name": "Kang Ho", 
+					"empid":"5",
+					"columns": [
+						{
+							"column_id": "10001", 
+							"avgValue": "1",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10002",
+							"avgValue": "3",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10003",
+							"avgValue": "3",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10004",
+							"avgValue": "3",
+							"status": "pending", 
+							"feedback":""
+						}
+					]
+				},
+
+				{
+					"name": "Matter Kai", 
+					"empid":"6",
+					"columns": [
+						{
+							"column_id": "10001", 
+							"avgValue": "5",
+							"status": "approved", 
+							"feedback":""
+						},
+						{
+							"column_id": "10002",
+							"avgValue": "3",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10003",
+							"avgValue": "2",
+							"status": "pending", 
+							"feedback":""
+						},
+						{
+							"column_id": "10004",
+							"avgValue": "2",
+							"status": "pending", 
+							"feedback":""
+						}
+					]
+				}
+			]
+		}
+	
+}

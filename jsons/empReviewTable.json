@@ -1,0 +1,39 @@
+{
+	"state": true,
+	"results": {
+		"title": "Coding Style",
+		"description": "Programming style is a set of rules or guidelines used when writing the source code for a computer program. It is often claimed that following a particular programming style will help programmers to read and understand source code conforming to the style, and help to avoid introducing errors.",
+		"rows": [
+			{
+				"name": "Jonathan Ive",
+				"value": "0",
+				"review": ""
+			},
+
+			{
+				"name": "Tim Cook",
+				"value": "0",
+				"review": ""
+			},
+
+			{
+				"name": "Amitabh Bachchan",
+				"value": "0",
+				"review": ""
+			},
+
+			{
+				"name": "Min-hen Law",
+				"value": "0",
+				"review": ""
+			},
+
+			{
+				"name": "Kang Ho",
+				"value": "0",
+				"review": ""
+			}
+		]
+
+	}
+}

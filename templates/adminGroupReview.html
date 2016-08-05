@@ -1,0 +1,299 @@
+Brand new
+<div class="row">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-header">
+                <i class="icon-user"></i>
+                <h3>Peer Reveiw Admin</h3>
+            </div> <!-- /widget-header -->
+            <div class="widget-content">
+                <tabset justified="true">
+                    <tab ng-repeat="group in myGroups" active="group.active" ng-click="load(group.name)">
+                        <tab-heading>
+                            {{group.name}}
+                        </tab-heading>
+                    </tab>
+                    <tab>
+                        <tab-heading>
+                            <a href="" data-toggle="modal" data-target="#myModal"><i class="icon-plus"></i></a>
+                        </tab-heading>
+                    </tab>
+                </tabset>
+
+                <span class="pull-right " ><i class="icon-gear " ng-click="open('lg')" style="font-size: 2em; cursor: pointer; position:relative; z-index: 33"></i></span>
+                <br />
+                <br />
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{title}} Comparison</div>
+                        <div class="panel-body">
+                        <canvas class="chart chart-stacked-bar" data="data" labels="labels" series="series" options="options" click="onClick"></canvas>
+                    </div>
+                </div>
+
+                <!-- <a href="#/home/peerreviewadmin/empid" style="text-decoration: none; color:black"><div id="overview" google-chart chart="chartObject" style="height: 500px; width: 100%"></div></a> -->
+
+
+
+                <!--popover template-->
+                <script type="text/ng-template" id="myPopoverTemplate.html">
+                    <div>{{dynamicPopover.content}}</div>
+                    <div class="form-group">
+                        <!--<label>Feedback:</label>-->
+                        <textarea type="text" ng-model="dynamicPopover.feedback" class="form-control" style="max-width: 97%; width:97%"></textarea>
+                        <div class="pull-right" style="margin:10px 0">
+                            <button class="btn">Close</button>
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </script>
+
+
+                <br />
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th class="span3">Name</th>
+                        <th>Coding Style</th>
+                        <th>Communication</th>
+                        <th>Code Efficiency</th>
+                        <th>Creativity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Jonathan Ive</th>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >4</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >2</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >3</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >5</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tim Cook</th>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >2</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >1</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >3</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >4</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Amitabh Bachchan</th>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >4</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >5</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >2</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >1</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Min-hen Law</th>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >4</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >1</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >2</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >1</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Kang Ho</th>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >3</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >5</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >2</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >1</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Matter Kai</th>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >4</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >2</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >2</button></td>
+                        <td><button class="btn" popover-template="dynamicPopover.templateUrl" popover-title="Add Feedback" >1</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--adding new group Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <!--<h4 class="modal-title" id="myModalLabel">Adding new performace group</h4>-->
+                <input  placeholder="New Group Name" style="width:50%">
+            </div>
+            <div class="modal-body" style="min-height: 200px; ">
+                <div class="container" ng-controller="dualListCtrl">
+                    <select
+                            ng-model="model"
+                            ng-options="obj.id as obj.text for obj in list"
+                            multiple
+                            bs-duallistbox
+                            bootstrap2="{{ settings.bootstrap2 }}"
+
+                            move-on-select="{{ settings.moveOnSelect }}"
+                            preserve-selection="{{ settings.preserveSelection }}"
+
+                            move-selected-label="{{ settings.moveSelectedLabel }}"
+                            move-all-label="{{ settings.moveAllLabel }}"
+                            remove-selected-label="{{ settings.removeSelectedLabel }}"
+                            remove-all-label="{{ settings.removeAllLabel }}"
+
+                            non-selected-list-label="{{ settings.nonSelectedListLabel }}"
+                            selected-list-label="{{ settings.selectedListLabel }}"
+
+                            postfix="{{ settings.postfix }}"
+                            select-min-height="{{ settings.selectMinHeight }}"
+
+                            filter="{{ settings.filter }}"
+                            filter-values="{{ settings.filterValues }}"
+                    <!--filter-non-selected="settings.filterNonSelected"-->
+                    <!--filter-selected="settings.filterSelected"-->
+                    filter-placeholder="{{ settings.filterPlaceholder }}"
+                    filter-clear="{{ settings.filterClear }}"
+                    info-all="{{ settings.infoAll }}"
+                    <!--info-filtered="{{ settings.infoFiltered }}"-->
+                    info-empty="{{ settings.infoEmpty }}"
+                    >
+                    </select>
+                </div>
+
+                <div class="row-item" ng-controller="DatepickerDemoCtrl">
+                    <div class="controls" style="display: inline-block;" >
+                        <label class="control-label">Start Date</label>
+                        <div class="input-append">
+                            <input class="span2 m-wrap no-margin" id="appendedInputButton" type="date" datepicker-popup ng-model="dt1" is-open="opened1" min-date="minDate"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close">
+                            <button type="button" class="btn btn-default" ng-click="open($event,'opened1')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </div>
+                    </div>
+                    <div class="controls" style="display: inline-block;" >
+                        <label class="control-label">End Date</label>
+                        <div class="input-append">
+                            <input class="span2 m-wrap no-margin" id="appendedInputButton" type="date" datepicker-popup ng-model="dt2" is-open="opened2" min-date="minDate"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close">
+                            <button type="button" class="btn btn-default" ng-click="open($event,'opened2')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <label>Editing Task</label>
+
+                <div class="row-item" ng-controller="DatepickerDemoCtrl">
+
+                    <input placeholder="KPI Name" class="no-margin" style="display: inline-block; width: 20%">
+                    <textarea  rows="1" placeholder="KPI Description" style="display: inline-block; width: 50%; margin-top:4px; resize: vertical"></textarea>
+                    <span onclick="addRowItem(this)" style="position: relative; top:4px; left:5px"><i class="icon-plus-sign" style="font-size: 2em"></i></span>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="create">Create</button>
+            </div>
+            <script>
+                function addRowItem(context){
+                    var newRowItem=$(context).parent().clone();
+                    newRowItem.find("textarea").css("height","");
+                    $(context).html("<i class='icon-minus-sign' style='font-size: 2em'></i>")
+                    $(context).attr("onclick","deleteRowItem(this)")
+                    $(context).parent().parent().append(newRowItem)
+                }
+                function deleteRowItem(context){
+                    $(context).parent().remove()
+                }
+            </script>
+        </div>
+    </div>
+</div>
+
+<!--configure group modal-->
+<div >
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+            <!--<h4 class="modal-title" id="myModalLabel">Adding new performace group</h4>-->
+            <input  placeholder="New Group Name" style="width:50%">
+        </div>
+        <div class="modal-body" ng-controller="dualListCtrl">
+            <!--<ul>-->
+            <!--<li ng-repeat="item in items">-->
+            <!--<a ng-click="selected.item = item">{{ item }}</a>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--Selected: <b>{{ selected.item }}</b>-->
+            <div class="container">
+                <select
+                        ng-model="model"
+                        ng-options="obj.id as obj.text for obj in list"
+                        multiple
+                        bs-duallistbox
+                        bootstrap2="{{ settings.bootstrap2 }}"
+
+                        move-on-select="{{ settings.moveOnSelect }}"
+                        preserve-selection="{{ settings.preserveSelection }}"
+
+                        move-selected-label="{{ settings.moveSelectedLabel }}"
+                        move-all-label="{{ settings.moveAllLabel }}"
+                        remove-selected-label="{{ settings.removeSelectedLabel }}"
+                        remove-all-label="{{ settings.removeAllLabel }}"
+
+                        non-selected-list-label="{{ settings.nonSelectedListLabel }}"
+                        selected-list-label="{{ settings.selectedListLabel }}"
+
+                        postfix="{{ settings.postfix }}"
+                        select-min-height="{{ settings.selectMinHeight }}"
+
+                        filter="{{ settings.filter }}"
+                        filter-values="{{ settings.filterValues }}"
+                <!--filter-non-selected="settings.filterNonSelected"-->
+                <!--filter-selected="settings.filterSelected"-->
+                filter-placeholder="{{ settings.filterPlaceholder }}"
+                filter-clear="{{ settings.filterClear }}"
+                info-all="{{ settings.infoAll }}"
+                <!--info-filtered="{{ settings.infoFiltered }}"-->
+                info-empty="{{ settings.infoEmpty }}"
+                >
+                </select>
+                <!--<div class="row">-->
+                <!--<button class="btn btn-large" ng-click="reset()">Reset</button>-->
+                <!--<button class="btn btn-large" ng-click="add()">Add</button>-->
+                <!--</div>-->
+            </div>
+            <label>Adding Task</label>
+            <div class="row-item" ng-controller="DatepickerDemoCtrl">
+                <div class="controls" style="display: inline-block;" >
+                    <label class="control-label">Start Date</label>
+                    <div class="input-append">
+                        <input class="span2 m-wrap no-margin" id="appendedInputButton" type="date" datepicker-popup ng-model="dt1" is-open="opened1" min-date="minDate"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close">
+                        <button type="button" class="btn btn-default" ng-click="open($event,'opened1')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </div>
+                </div>
+                <div class="controls" style="display: inline-block;" >
+                    <label class="control-label">End Date</label>
+                    <div class="input-append">
+                        <input class="span2 m-wrap no-margin" id="appendedInputButton" type="date" datepicker-popup ng-model="dt2" is-open="opened2" min-date="minDate"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close">
+                        <button type="button" class="btn btn-default" ng-click="open($event,'opened2')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </div>
+                </div>
+            </div>
+            <label>Editing Task</label>
+
+            <div class="row-item" ng-controller="DatepickerDemoCtrl">
+
+                <input placeholder="KPI Name" class="no-margin" style="display: inline-block; width: 20%">
+                <textarea  rows="1" placeholder="KPI Description" style="display: inline-block; width: 50%; margin-top:4px; resize: vertical"></textarea>
+                <span onclick="addRowItem(this)" style="position: relative; top:4px; left:5px"><i class="icon-plus-sign" style="font-size: 2em"></i></span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger pull-left" ng-click="delete()">Delete Group</button>
+            <button class="btn btn-primary" ng-click="ok()">Save</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <!--<button class="btn btn-default" ng-click="open()">Open me!</button>-->
+    <!--<button class="btn btn-default" ng-click="open('lg')">Large modal</button>-->
+    <!--<button class="btn btn-default" ng-click="open('sm')">Small modal</button>-->
+    <!--<div ng-show="selected">Selection from a modal: {{ selected }}</div>-->
+</div>

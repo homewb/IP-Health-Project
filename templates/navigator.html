@@ -1,0 +1,79 @@
+<div class="subnavbar">
+    <div class="subnavbar-inner">
+        <div class="container">
+            <ul class="mainnav">
+                <li ui-sref-active="active" class="active">
+                    <a ui-sref="home.dashboard">
+                        <i class="icon-dashboard"></i>
+                        <span>Dashboard</span> 
+                    </a>
+                </li>
+                <!-- <li ui-sref-active="active" class="active">
+                    <a ui-sref="home.reports">
+                        <i class="icon-list-alt"></i>
+                        <span>Reports</span> 
+                    </a>
+                </li> -->
+               <!--  <li class="dropdown active" ui-sref-active="active" dropdown>
+                    <a href class="dropdown-toggle" dropdown-toggle>
+                        <i class="icon-time"></i>
+                        <span>Tracker</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="home.timetracker">Time Tracker</a></li>
+                        <li><a ui-sref="home.performancetracker">Performance Tracker</a></li>
+                    </ul>
+                </li> -->
+                <li ui-sref-active="active" class="active">
+                    <a ui-sref="home.findstaff">
+                        <i class="icon-user"></i>
+                        <span>Find Staff</span>
+                    </a>
+                </li>
+                <!-- <li ui-sref-active="active" class="active">
+                    <a ui-sref="home.error">
+                        <i class="icon-money"></i>
+                        <span>Payroll</span>
+                    </a>
+                </li> -->
+                <!-- <li ui-sref-active="active" class="active">
+                    <a ui-sref="home.application">
+                        <i class="icon-file"></i>
+                        <span>Application</span>
+                    </a>
+                </li> -->
+                <li class="dropdown active" ui-sref-active="active" dropdown>
+
+                    <a href class="dropdown-toggle" dropdown-toggle>
+                        <span class="badge badge-warning" style="position: absolute; right: 5px; top: 3px" ng-show="totalReviewNotice != 0">{{totalReviewNotice}}</span>
+                        <i class="icon-group"></i>
+                        <span>Review</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="home.myreviews">My Reveiws</a></li>
+                        <li><a ui-sref="home.peerreview">Peer Review <span class="badge pull-right" ng-show="totalReviewNotice != 0">{{totalReviewNotice}}</span></a></li>
+                    </ul>
+                </li>
+                <li ng-show="isHrManager()" ui-sref-active="active" class="active">
+                    <a ui-sref="home.hrmanager">
+                        <i class="icon-file"></i>
+                        <span>HR Manager</span>
+                    </a>
+                </li>
+                <li ng-show="isAdministrator()" class="dropdown active" ui-sref-active="active" dropdown>
+                    <a href class="dropdown-toggle" dropdown-toggle>
+                        <i class="icon-gear"></i>
+                        <span>Administration</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- <li><a ui-sref="home.administration">Performance Admin</a></li> -->
+                        <li><a ui-sref="home.peerreviewadmin">Peer Review Admin</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /subnavbar-inner -->
+</div>
+<!-- /subnavbar -->

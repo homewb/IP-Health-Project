@@ -1,0 +1,187 @@
+{
+	"state": true,
+	"titles": ["Date", "Published Paper", "Cited Paper", "Phd Students", "Master Students"],
+	"rows": [
+		{
+			"date": "2008",
+			"columns": [
+				{
+					"column_id": "100001",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100002",
+					"value": "20",
+					"status": "approved"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				}
+			]
+		},
+
+		{
+			"date": "2009",
+			"columns": [
+				{
+					"column_id": "100001",
+					"value": "20",
+					"status": "rejected"
+				},
+				{
+					"column_id": "100002",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				}
+			]
+		},
+
+		{
+			"date": "2010",
+			"columns": [
+				{
+					"column_id": "100001",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100002",
+					"value": "20",
+					"status": "rejected"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				}
+			]
+		},
+
+		{
+			"date": "2011",
+			"columns": [
+				{
+					"column_id": "100001",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100002",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				}
+			]
+		},
+
+		{
+			"date": "2012",
+			"columns": [
+				{
+					"column_id": "100001",
+					"value": "20",
+					"status": "approved"
+				},
+				{
+					"column_id": "100002",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				}
+			]
+		},
+
+		{
+			"date": "2013",
+			"columns": [
+				{
+					"column_id": "100001",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100002",
+					"value": "20",
+					"status": "rejected"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				}
+			]
+		},
+		
+		{
+			"date": "2014",
+			"columns": [
+				{
+					"column_id": "100001",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100002",
+					"value": "20",
+					"status": "rejected"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				},
+				{
+					"column_id": "100003",
+					"value": "20",
+					"status": "pending"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="center" style="min-height:550px;">
+        <div class="widget-content">
+
+            <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            <input st-search placeholder="Global Search" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th colspan="4"><button class="btn" data-animation="am-fade-and-slide-top" data-template="templates/dialogs/addEditEmployeeModal.html" bs-modal="modal" ng-click="createProfile()">+</button></th>
+                    </tr>
+                    <tr>
+                        <th st-sort="firstname">first name</th>
+                        <th st-sort="lastname">last name</th>
+                        <th st-sprt="department">department</th>
+                        <th st-sprt="mobile">mobile</th>
+                        <th st-sprt="email">email</th>
+                        <th>Edit</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in displayedCollection">
+                        <td>{{row.firstname | uppercase}}</td>
+                        <td>{{row.lastname}}</td>
+                        <td>{{row.department}}</td>
+                        <td>{{row.mobile}}</td>
+                        <td><a ng-href="mailto:{{row.email}}">{{row.email}}</a></td>
+                        <td><button class="btn" data-animation="am-fade-and-slide-top" data-template="templates/dialogs/addEditEmployeeModal.html" bs-modal="modal" ng-click="setCurrentRow(row)">Edit</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>	
+
+        </div>
+
+    </div>
+
+
+</div>

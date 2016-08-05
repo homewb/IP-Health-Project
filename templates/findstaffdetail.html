@@ -1,0 +1,20 @@
+<div class="row" style="height: 600px">
+	<div class="widget-content span8 center" >
+<!--
+	<a href="#/home/findstaff/{{prevstaff}}" class="btn btn-left">&lt;</a>
+    <a href="#/home/findstaff/{{nextstaff}}" class="btn btn-right">&gt;</a>
+-->
+		<img src="{{employees[whichId].photo}}" style="float: left; margin:5px 10% 10px 0">
+		<!--<div id="bio" style="float: left;">-->
+		<h3>{{employees[whichId].firstname}} {{employees[whichId].lastname}}</h3>
+		<br>
+		<h5>{{employees[whichId].address}}</h5>
+		<h5>{{employees[whichId].birthday}}</h5>
+		<h5>{{employees[whichId].department}}</h5>
+		<p>{{employees[whichId].email}}</p>
+		<p>{{employees[whichId].mobile}}</p>
+		<!--</div>-->
+        <a class="btn" href="#/home/findstaff" style="float:right"> Back to search</a>
+	</div>
+	
+</div> <!-- /row -->

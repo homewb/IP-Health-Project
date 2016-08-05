@@ -1,0 +1,38 @@
+<tabset justified="true">
+    <tab ng-repeat="group in myGroups" active="group.active" ng-click="load(group.groupid)">
+        <tab-heading>
+            {{group.grouptittle}}
+        </tab-heading>
+        <span class="pull-right "><i class="icon-gear "style="font-size: 2em; cursor: pointer; position:relative; z-index: 33" data-animation="am-fade-and-slide-top" data-template="templates/dialogs/addReviewGroupModal.html" bs-modal="modal"></i></span>
+
+        <div id="overview" google-chart chart="chartObject" style="width: 100%"></div>
+
+
+        <table st-table="displayedCollection" st-safe-src="myTableData" class="table table-hover" >
+            <thead>
+            <tr>
+                <th ng-repeat="title in myTableTitle" ng-class="{span3: $index==0}">{{title}}</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr class="animate-repeat" ng-repeat="row in displayedCollection">
+                <th scope="row span3"><a style="color:inherit;" ng-href="#/home/peerreviewadmin/{{row.empid}}&{{group.groupid}}">{{row.empname}}</a></th>
+                <td ng-repeat="column in row.columns">
+                    <button ng-click="setIndexPath(row, column)" class="btn" title="Add Feedback" data-template="templates/dialogs/feedbackPopover.html" placement="top"  bs-popover>{{column.avgValue}}</button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </tab>
+    <!--<tab>-->
+        <!--<tab-heading>-->
+            <!--<a href="" data-toggle="modal" data-target="#myModal"><i class="icon-plus"></i></a>-->
+        <!--</tab-heading>-->
+    <!--</tab>-->
+
+    <ul class="nav nav-tabs" style="border: 0; margin:0" role="tablist">
+        <li><a data-animation="am-fade-and-slide-top" data-template="templates/dialogs/addReviewGroupModal.html" bs-modal="modal"><i class="icon-plus"></i></a></li>
+        </ul>
+</tabset>

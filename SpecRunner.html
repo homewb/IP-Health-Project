@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.3.4</title>
+
+  <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.3.4/jasmine_favicon.png">
+  <link rel="stylesheet" href="jasmine/lib/jasmine-2.3.4/jasmine.css">
+
+  <script src="jasmine/lib/jasmine-2.3.4/jasmine.js"></script>
+  <script src="jasmine/lib/jasmine-2.3.4/jasmine-html.js"></script>
+  <script src="jasmine/lib/jasmine-2.3.4/boot.js"></script>
+
+  <!-- include source files here... -->
+  <!-- Library for mockup and might be removed in the future -->
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <!--<script src="lib/jquery-2.1.3.min.js"></script>-->
+    <script src="js/excanvas.min.js"></script>
+    <script src="js/chart.min.js" type="text/javascript"></script>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/signin.js"></script>
+    
+    <!-- Core angularJS library files from outside, Please keep their order -->
+    <script type="text/javascript" src="lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="lib/moment.min.js"></script>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="jasmine/lib/angular-mocks.js"></script>
+    
+    <script type="text/javascript" src="lib/Chart.js"></script>
+    <script type="text/javascript" src="lib/Chart.StackedBar.js"></script>
+    <script type="text/javascript" src="lib/calendar.js"></script>
+    <script type="text/javascript" src="lib/fullcalendar.js"></script>
+    <script type="text/javascript" src="lib/gcal.js"></script>
+    <script type="text/javascript" src="lib/angular-chart.js"></script>
+    <script type="text/javascript" src="lib/angular-animate.js"></script>
+    <script type="text/javascript" src="lib/angular-ui-router.js"></script>
+    <script type="text/javascript" src="lib/angular-cookies.js"></script>
+    <script type="text/javascript" src="lib/angular-sanitize.js"></script>
+    <script type="text/javascript" src="lib/angular-messages.js"></script>
+
+    <!-- 3rd-party angularJS library file -->
+    <script type="text/javascript" src="lib/angular-md5.js"></script>
+    <script type="text/javascript" src="lib/angular-idle.js"></script>
+    <script type="text/javascript" src="lib/ui-utils.js"></script>
+    <script type="text/javascript" src="lib/select.js"></script>
+    <script type="text/javascript" src="lib/xeditable.js"></script>
+    <script type="text/javascript" src="lib/smart-table.js"></script>
+    <script type="text/javascript" src="lib/ngDialog.min.js"></script>
+    <script type="text/javascript" src="lib/angular-bootstrap-duallistbox.js"></script>
+    <script type="text/javascript" src="lib/jquery.bootstrap-duallistbox.js"></script>
+    <script type="text/javascript" src="lib/bsDuallistbox.js"></script>
+    <script type="text/javascript" src="lib/ng-google-chart.js"></script>
+    <script type="text/javascript" src="lib/angular-strap.min.js"></script>
+    <script type="text/javascript" src="lib/angular-strap.tpl.min.js"></script>
+    <script type="text/javascript" src="lib/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script type="text/javascript" src="lib/angular.dcb-clear-input.min.js"></script>
+
+    <!-- move ui-bootstrap beneath angular-strap in order to fix some conflicts -->
+
+
+    <!-- Customised angularJS files -->
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="app.config.js"></script>
+    <script type="text/javascript" src="app.service.js"></script>
+    <script type="text/javascript" src="modules/login/loginService.js"></script>
+    <script type="text/javascript" src="modules/login/loginController.js"></script>
+    <script type="text/javascript" src="modules/login/loginDirectives.js"></script>
+    <script type="text/javascript" src="modules/home/homeController.js"></script>
+    <script type="text/javascript" src="modules/home/homeService.js"></script>
+    <script type="text/javascript" src="modules/home/header/headerController.js"></script>
+    <script type="text/javascript" src="modules/home/navigator/navigatorController.js"></script>
+    <script type="text/javascript" src="modules/home/main/profile/profileController.js"></script>
+    <script type="text/javascript" src="modules/home/main/profile/profileService.js"></script>
+    <script type="text/javascript" src="modules/home/main/profile/profileDirective.js"></script>
+    <script type="text/javascript" src="modules/home/main/dashboard/dashboardController.js"></script>
+    <script type="text/javascript" src="modules/home/main/dashboard/dashboardDirectives.js"></script>
+    <script type="text/javascript" src="modules/home/main/dashboard/calendarController.js"></script>
+    <script type="text/javascript" src="modules/home/main/performance/performanceDirectives.js"></script>
+    <script type="text/javascript" src="modules/home/main/performance/performanceController.js"></script>
+    <script type="text/javascript" src="modules/home/main/performance/performanceService.js"></script>
+    <script type="text/javascript" src="modules/home/main/administration/adminController.js"></script>
+    <script type="text/javascript" src="modules/home/main/administration/adminDirective.js"></script>
+    <script type="text/javascript" src="modules/home/main/administration/adminService.js"></script>
+    <script type="text/javascript" src="modules/home/main/administration/adminFilter.js"></script>
+    <script type="text/javascript" src="modules/home/main/review/peerReviewDirective.js"></script>
+    <script type="text/javascript" src="modules/home/main/review/peerReviewController.js"></script>
+    <script type="text/javascript" src="modules/home/main/review/peerReviewService.js"></script>
+    <script type="text/javascript" src="modules/home/main/administration/adminPeerReviewController.js"></script>
+    <script type="text/javascript" src="modules/home/main/administration/adminPeerReviewDirective.js"></script>
+    <script type="text/javascript" src="modules/home/main/administration/adminPeerReviewService.js"></script>
+    <script type="text/javascript" src="modules/home/main/review/myReveiwController.js"></script>
+    <script type="text/javascript" src="modules/home/main/review/myReviewService.js"></script>
+    <script type="text/javascript" src="modules/home/main/findstaff/findStaffController.js"></script>
+
+
+  <!-- include spec files here... -->
+  <script src="test/peerReviewControllerSpec.js"></script>
+  <script src="test/profileControllerSpec.js"></script>
+  <script src="test/loginControllerSpec.js"></script>
+  <script src="test/navigatorControllerSpec.js"></script>
+  <script src="test/headerControllerSpec.js"></script>
+
+</head>
+
+<body>
+</body>
+</html>

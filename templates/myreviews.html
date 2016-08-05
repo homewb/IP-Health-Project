@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-header">
+            <i class="icon-group"></i>
+            <h3>My Review</h3>
+        </div> <!-- /widget-header -->
+        <div class="widget-content">
+
+            <!-- new version -->
+            <tabset justified="true">
+                <tab ng-repeat="group in myGroups" active="group.active" ng-click="reload(group.groupid)">
+                    <tab-heading>{{group.grouptittle}}</tab-heading>
+                    <br>
+                    <div class="tab-content" ng-hide="submitted">
+                        <div class="panel panel-default" >
+                            <!--<div class="panel-heading">{{myReview.title}}</div>-->
+                            <div class="panel-heading">My Latest Review</div>
+                          <!---->
+                            <!--<table id="reviewTable" class="table">-->
+                                <!--<tr style="border-top:1px solid #e1e1e1;" ng-repeat="row in myReview.rows">-->
+                                    <!--<th class="span2 name" >{{row.firstname}} {{row.lastname}}</th>-->
+                                    <!--<td style="text-align: center" class="span3">-->
+                                        <!--<rating ng-model="row.reviewdata" max="5" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"  ></rating>-->
+                                    <!--</td>-->
+                                    <!--<td class="span7">-->
+                                        <!--<textarea style="resize: vertical" class="no-margin span7" ng-model="row.reviewcomment" placeholder="Please write review here"></textarea>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                            <!--</table>-->
+                            <style>
+                                #myReviewTable .name{
+                                    padding-left: 15px;
+                                    vertical-align: middle;
+                                }
+                            </style>
+                            <table id="myReviewTable" class="table" ng-show="hasReview">
+                                <thead>
+                                    <th class="span2 name">KPI Name</th>
+                                    <th class="span2">Average Score</th>
+                                    <th>Feedback</th>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="kpi in kpis">
+                                        <td class="name">{{kpi.kpi_name}}</td>
+                                        <td>
+                                            <rating ng-model="kpi.avgValue" max="5" readonly="true" on-hover="hoveringOver(value)" on-leave="overStar = null"  ></rating>
+                                        </td>
+                                        <td>{{kpi.feedback}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="well well-large div_text_shadow" ng-hide="hasReview" style="border-radius: 0;margin: 0;height: 200px;line-height: 9;">
+                                The review for this group has not finished yet
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>

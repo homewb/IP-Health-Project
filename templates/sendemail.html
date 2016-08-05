@@ -1,0 +1,48 @@
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="index.html">
+				Campany Name
+			</a>
+			<div class="nav-collapse">
+				<ul class="nav pull-right">				
+					<li class=""></li>				
+					<li class=""></li>
+				</ul>
+			</div><!--/.nav-collapse -->	
+		</div> <!-- /container -->
+	</div> <!-- /navbar-inner -->
+</div> <!-- /navbar -->
+
+<div class="account-container">
+	<div class="content clearfix">
+		<div ng-model="message" ng-switch on="message">
+			<div ng-switch-when="success">
+				We have sent you a link for resetting password, please check your email.
+			</div>
+			<div ng-switch-when="">
+				<form name="form" ng-submit="submit()" role="form" novalidate>
+					<h2>Email address</h2>
+					<div class="login-fields">
+						<p>We need your email address to reset password</p>
+						<div class="field">
+							<label for="username">Email</label>
+							<input type="email" id="email" name="email" value="" ng-model="email" placeholder="Email Address" class="login username-field" required />
+						</div> <!-- /field -->
+					</div> <!-- /login-fields -->
+					<div class="login-actions" style="text-align: center">
+						<button type="submit" ng-disabled="form.$invalid" class=" btn btn-success btn-large center" style="margin-top:20px ">Submit</button>
+					</div> <!-- .actions -->
+				</form>
+			</div>
+		</div>
+	</div> <!-- /content -->
+</div> <!-- /account-container -->
+
+<div class="login-extra"></div> <!-- /login-extra -->
+

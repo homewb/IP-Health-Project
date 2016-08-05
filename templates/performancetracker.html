@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="span6">
+        <kpi-percentage></kpi-percentage>
+    </div>
+    <div class="span6">
+        <kpi-graph></kpi-graph>
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+    	<div class="widget ">
+			<div class="widget-header">
+			    <i class="icon-user"></i>
+			    <h3>{{widgetTitle}}</h3>
+			    <div class="btn-group-action-bar">
+			        <i class="icon-chevron-left"></i>
+
+			        <div style="display:inline-block">
+			            <!-- Button to trigger modal -->
+			            <a href="#datePickerModal" data-toggle="modal" ><i class="icon-calendar"></i></a>
+
+			            <!-- Modal -->
+			            <div id="datePickerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="datePickerModal" aria-hidden="true" style="display: none; ">
+			                <div class="modal-header">
+			                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			                    <h3 id="myModalLabel">Choose the period to display</h3>
+			                </div>
+			                <div class="modal-body">
+			                    <script src="./lib/bootstrap-datepicker.min.js"></script>
+			                    <link href="./css/bootstrap-datepicker.min.css" rel="stylesheet">
+			                    <div class="input-daterange">
+			                        <input type="text" id="start-date" class="span2 datepicker" data-provide="datepicker" placeholder="Start Date" required/>
+			                        <span class="add-on" id="end-date" style="margin-bottom:9px">to</span>
+			                        <input type="text" class="span2 datepicker" data-provide="datepicker" placeholder="End Date" required/>
+			                    </div>
+			                    <script>
+			                        $('.datepicker').datepicker({
+			                            format: 'mm/dd/yyyy',
+			                            startDate: '-3m', //start from last 3 months
+			                            todayBtn: "linked"
+			                        })
+			                    </script>
+			                </div>
+			                <div class="modal-footer">
+			                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			                    <button class="btn btn-primary">Save</button>
+			                </div>
+			            </div>
+			        </div>
+			        <i class="icon-chevron-right"></i>
+			    </div>
+			</div> 
+			<!-- /widget-header -->
+			<div class="widget-content">
+			    <div class="control-group">
+			        <div class="controls">
+			        	<perfermance-table></perfermance-table>
+			        </div> 
+			        <!-- /controls -->
+			    </div>
+			    <div style="padding-bottom:20px">
+			        <span class="btn btn-success disabled">Approved</span>
+			        <span class="btn btn-warning disabled">Pending</span>
+			        <span class="btn btn-danger ">Rejected</span>
+			        <span class="btn disabled">Automatic</span>
+			        <!--<label class="control-label">Accordion</label>-->
+			    </div>
+			</div>
+		</div>
+    </div>
+</div>
+
+
+
+

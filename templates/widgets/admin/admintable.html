@@ -1,0 +1,49 @@
+<tabset justified="true">
+    <tab ng-repeat="group in myGroups" active="group.active" ng-click="load(group.id)">
+        <tab-heading>
+            {{group.name}}  <span class="badge">{{group.numOfPending}}</span>
+        </tab-heading>
+
+        <span class="pull-right"><i class="icon-gear icon-large "></i></span>
+        <div id="display" class="dropdown pull-right" style="margin-right: 20px">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-expanded="false">
+                Display Mode
+            </a><span class="caret"></span>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="" ng-click="showAll()">All Records</a></li>
+                <li><a href="" ng-click="showPending()">Pending</span></a></li>
+                <li><a href="" ng-click="showHistory()">History</a></li>
+            </ul>
+        </div>
+        <div ng-repeat="data in myTableData" ng-show="!isLoading">
+            <h3 class="padding">{{data.date}}</h3>
+            <table st-table="myTableData" st-safe-src="myTableData" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th ng-repeat="title in myTableTitle" ng-class="{span3: $index==0}">{{title}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="animate-repeat" ng-repeat="row in data.rows | display: displayModel">
+                        <th scope="row">{{row.name}}</th>
+                        <td ng-repeat="column in row.columns">
+                            <span ng-class="{'btn btn-danger disabled animate-if': isRejected(column.status), 'btn btn-success disabled animate-if': !isRejected(column.status)}" ng-if="!isEditable(column.status)">{{column.value}}</span>
+                            <div class="radio-wrapper">
+                                <span class="btn btn-warning animate-if" ng-if="isEditable(column.status)" editable-radiolist="column.status" e-ng-options="s.value as s.text for s in statuses" onbeforesave="updateStatus(column)">{{column.value}}</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>      
+        </div>
+        <div colspan="4" class="loading-indicator" ng-show="isLoading">Loading ... </div>
+        <div class="form-actions">
+            <button class="btn btn-primary" ng-click="openSubmitModal()">Submit</button>
+        </div>      
+    </tab>
+    <tab>
+        <tab-heading>
+            <a href="" data-toggle="modal" data-target="#myModal"><i class="icon-plus"></i></a>
+        </tab-heading>
+    </tab>
+</tabset>

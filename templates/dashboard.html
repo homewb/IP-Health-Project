@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="span6">
+        <what-is-new ng-show="preference.showState"></what-is-new>
+        <my-calendar ng-show="preference.showCalendar"></my-calendar>
+        <my-message ng-show="preference.showMessages"></my-message>
+    </div>
+    <!-- /span6 -->
+    <div class="span6">
+        <area-chart ng-show="preference.showChart"></area-chart>
+        <to-do-list ng-show="preference.showTodo"></to-do-list>
+        <my-announcement ng-show="preference.showAnnounce"></my-announcement>
+
+        <div class="widget">
+            <div class="widget-header"><i class="icon-bookmark"></i>
+
+                <h3>Widgets Library</h3>
+
+                <div class="btn-group-action-bar">
+                    <i class="icon-cog"></i>
+                    <i class="icon-remove"></i>
+                </div>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+                <div class="shortcuts">
+                    <a href="" class="shortcut" ng-click="state()">
+                        <i class="shortcut-icon icon-list-alt"></i>
+                        <span class="shortcut-label">What's new</span> 
+                    </a>
+                    <a href="" class="shortcut" ng-click="calendar()">
+                        <i class="shortcut-icon icon-bookmark"></i>
+                        <span class="shortcut-label">Calendar</span>
+                    </a>
+                    <a href="" class="shortcut" ng-click="messages()">
+                        <i class="shortcut-icon icon-signal"></i> 
+                        <span class="shortcut-label">Messages</span> 
+                    </a>
+                    <a href="" class="shortcut" ng-click="charts()">
+                        <i class="shortcut-icon icon-comment"></i>
+                        <span class="shortcut-label">Charts</span>
+                    </a>
+                    <a href="" class="shortcut" ng-click="todo()">
+                        <i class="shortcut-icon icon-user"></i>
+                        <span class="shortcut-label">Todo list</span> 
+                    </a>
+                    <a href="" class="shortcut" ng-click="announce()">
+                        <i class="shortcut-icon icon-file"></i>
+                        <span class="shortcut-label">Announcements</span>
+                    </a>
+                    <a href="javascript:;" class="shortcut">
+                        <i class="shortcut-icon icon-picture"></i>
+                        <span class="shortcut-label">Photos</span>
+                    </a>
+                    <a href="javascript:;" class="shortcut">
+                        <i class="shortcut-icon icon-tag"></i>
+                        <span class="shortcut-label">Tags</span>
+                    </a>
+                    <a href="javascript:;" class="shortcut"> 
+                        <i class="shortcut-icon icon-tag"></i>
+                        <span class="shortcut-label">Tags</span> 
+                    </a>
+                    <a href="javascript:;" class="shortcut">
+                        <i class="shortcut-icon icon-tag"></i>
+                        <span class="shortcut-label">Tags</span> 
+                    </a>
+                    <a href="javascript:;" class="shortcut">
+                        <i class="shortcut-icon icon-tag"></i>
+                        <span class="shortcut-label">Tags</span>
+                    </a>
+                    <a href="javascript:;" class="shortcut">
+                        <i class="shortcut-icon icon-tag"></i>
+                        <span class="shortcut-label">Tags</span>
+                    </a>
+                </div>
+                <!-- /shortcuts -->
+            </div>
+            <!-- /widget-content -->
+        </div>
+        <!-- /widget -->
+    </div>
+    <!-- /span6 -->
+</div>
+<!-- /row -->
+
+

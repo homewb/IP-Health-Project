@@ -1,0 +1,129 @@
+<div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="hrmanagerController">
+    <form name="form" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+                Edit Profile
+            </div>
+            <div class="modal-body" >
+                <form id="edit-profile" name="form" class="form-horizontal" role="form" novalidate>
+                    <fieldset>
+                        <!--<img src="img/cook_hero.png"/>-->
+                        <div class="control-group">
+                            <label class="control-label" for="firstname">Employee ID</label>
+                            <div class="controls">
+                                <input type="text" placeholder="ID (Assigned On Created)" name="firstname" class="span4" id="firstname" ng-model="currentRow.empid" name-characters-validator disabled />
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="firstname">First Name</label>
+                            <div class="controls">
+                                <input type="text" placeholder="Firstname (required)" name="firstname" class="span4" id="firstname" ng-model="currentRow.firstname" name-characters-validator required />
+                                <div class="error-color" ng-if="interacted(form.firstname)" ng-messages for="form.firstname.$error">                  
+                                    <ng-message when="required">You did not enter your first name</ng-message>
+                                    <ng-message when="name-characters">Your name must only consist of characters</ng-message>
+                                </div>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="lastname">Last Name</label>
+                            <div class="controls">
+                                <input type="text" placeholder="Lastname (required)" name="lastname" class="span4" id="lastname" ng-model="currentRow.lastname" name-characters-validator required />
+                                <div class="error-color" ng-if="interacted(form.lastname)" ng-messages for="form.lastname.$error">
+                                    <ng-message when="required">You did not enter your last name</ng-message>
+                                    <ng-message when="name-characters">Your name must only consist of characters</ng-message>
+                                </div>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="email">Email Address</label>
+                            <div class="controls">
+                                <input type="text" class="span4" id="email" placeholder="Email (required)" ng-model="currentRow.email" required>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="dob">Date of Birth</label>
+                            <div class="controls">
+                                <!--                                <input type="date" class="span4" name="dob" id="dob" ng-model="currentRow.birth" date-parser="yyyy-MM-dd" required />-->
+                                <input type="text" ng-model="currentRow.birthday" class="form-control" name="date" bs-datepicker >
+                                <div class="error-color" ng-if="interacted(form.dob)" ng-messages for="form.dob.$error">
+                                    <ng-message when="required">Your birthday is either blank or has an incorrect value</ng-message>
+                                </div>
+                            </div> 
+                            <!-- /controls -->
+                        </div> 
+                        <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label">Address: </label>
+                            <div class="controls">
+                                <!--                                <input class="form-control" ng-model="selectedAddress" data-animation="am-flip-x" bs-options="address.formatted_address as address.formatted_address for address in getAddress($viewValue)" placeholder="Enter address" bs-typeahead>-->
+                                <input type="text" class="form-control" ng-model="currentRow.address"  placeholder="Enter address">
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="phone1">Mobile</label>
+                            <div class="controls">
+                                <input type="text" class="span4" id="phone1" name="mobile" placeholder="Phone Number" ng-model="currentRow.mobile" ng-maxlength="10" phone-number-validator  />
+                                <div class="error-color" ng-if="interacted(form.mobile)" ng-messages for="form.mobile.$error">
+                                    <ng-message when="required">You did not enter a phone number</ng-message>
+                                    <ng-message when="phone-numbers">You must enter ten numbers</ng-message>
+                                    <ng-message when="maxlength">Your phone number is too long</ng-message>
+                                </div>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="phone2">Work Phone</label>
+                            <div class="controls">
+                                <!-- <input type="text" class="span4" id="phone2" name="phone" ng-model="currentRow.phone" ui-br-phone-number= required /> -->
+                                <input type="text" class="span4" id="phone2" name="phone" placeholder="Phone Number" ng-model="currentRow.phone" ng-maxlength="10" phone-number-validator />
+                                <div class="error-color" ng-if="interacted(form.phone)" ng-messages for="form.phone.$error">
+                                    <ng-message when="required">You did not enter a phone number</ng-message>
+                                    <ng-message when="phone-numbers">You must enter ten numbers</ng-message>
+                                    <ng-message when="maxlength">Your phone number is too long</ng-message>
+                                </div>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                         <div class="control-group">
+                            <label class="control-label" for="phone2">Department</label>
+                            <div class="controls">
+                                <input type="text" class="span4" ng-model="currentRow.department" placeholder="Department"/>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="phone2">Position</label>
+                            <div class="controls">
+                                <input type="text" class="span4" ng-model="currentRow.jobtittle" placeholder="Position"/>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="phone2">Reset Password</label>
+                            <div class="controls">
+                                <input type="text" class="span4" ng-model="currentRow.password" placeholder="!!Only for new password or reset"/>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+                        <div class="control-group">
+                            <label class="control-label" for="phone2">Permission</label>										
+                            <div class="controls btn-group">
+                                <label class="radio inline ">
+                                    <input type="radio" ng-model="currentRow.permission" name="radiobtns" value="E"> Normal
+                                </label>
+                                <label class="radio inline ">
+                                    <input type="radio" ng-model="currentRow.permission" name="radiobtns" value="A"> Admin
+                                </label>			
+                            </div>
+                        </div> <!-- /control-group -->
+                        <br />
+                        <br />
+                    </fieldset>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger pull-left" ng-click="deleteProfile();$hide()" ng-show="isEdit">Delete Profile</button>
+                <button class="btn btn-primary" ng-disabled="form.field.$error.required" ng-click="saveProfile();$hide()">Save</button>
+                <button class="btn btn-warning" ng-click="$hide()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+

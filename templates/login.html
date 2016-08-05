@@ -1,0 +1,51 @@
+
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <a class="brand" href="index.html">
+                Company Name
+            </a>
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class=""></li>
+                    <li class=""></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div> <!-- /container -->
+    </div> <!-- /navbar-inner -->
+</div> <!-- /navbar -->
+
+<div class="account-container">
+    <div class="content clearfix">
+        <form name="form" ng-submit="login()" role="form" novalidate>
+            <h1>Member Login</h1>
+            <div class="login-fields">
+                <p>Please provide your details</p>
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input type="text" id="email" name="email" ng-model="user.username" placeholder="Email Address" class="login username-field" required/>
+                </div> <!-- /field -->
+                <div class="field">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" ng-model="user.password" placeholder="Password" class="login password-field" required/>
+                </div> <!-- /password -->
+                <div collapse="!submitted">
+                    <alert ng-if="invalid">Email address or password is incorrect.</alert>
+                </div>
+            </div> <!-- /login-fields -->
+            <div class="login-actions">
+                <span class="login-checkbox">
+                    <input id="Field" name="Field" ng-model="user.remember" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+                    <label class="choice" for="Field">Remember Me</label>
+                </span>
+                <button type="submit" ng-disabled="form.$invalid" class="button btn btn-success btn-large">Sign In</button>
+            </div> <!-- .actions -->
+        </form>
+    </div> <!-- /content -->
+</div> <!-- /account-container -->
+
+<div class="login-extra">
+    <a ui-sref="sendemail" ng-click="reset()">Forgot Password</a>
+</div> <!-- /login-extra -->

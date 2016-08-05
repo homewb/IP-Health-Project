@@ -1,0 +1,12 @@
+        <div class=" popover am-fade">
+			<div class="arrow" style="left: 50%;"></div>
+			<h3 class="popover-title ng-binding" ng-bind="title" ng-show="title">Add Feedback</h3>
+			<div class="popover-content">
+				<textarea rows="5" type="text" ng-model="popover.feedback" style="resize: vertical; width: 96%" placeholder="Write feedback here">{{feedback}}</textarea>
+				<div class="pull-right" style="margin-bottom:10px">
+					<button class="btn" ng-click="$hide()">Close</button>
+					<button class="btn btn-primary" ng-click="saveFeedback();$hide()">Submit</button>
+				</div>
+			</div>
+
+        </div>

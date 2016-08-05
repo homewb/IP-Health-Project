@@ -1,0 +1,28 @@
+<accordion>
+    <accordion-group ng-repeat="group in myGroups" ng-click="load(group.id)">
+        <accordion-heading>
+            {{group.name}}
+        </accordion-heading>
+        <table st-table="displayedTableData" st-safe-src="myTableData" class="table table-hover">
+            <thead>
+                <tr>
+                    <th ng-repeat="title in myTableTitle">{{title}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in displayedTableData">
+                    <th scope="row">{{row.date}}</th>
+                    <td ng-repeat="column in row.columns">
+                        <span ng-class="{'btn btn-success disabled animate-if': isApproved(column.status), 'btn btn-warning disabled animate-if': isPending(column.status), 'btn disabled': isAuto(column.status)}" ng-if="!isEditable(column.status)">{{column.value}}</span>
+                        <div class="item-wrapper">
+                            <span class="btn btn-danger animate-if" ng-if="isEditable(column.status)" editable-text="column.value" onbeforesave="updateColumn($data, column)">{{column.value}}</span>
+                        </div>
+                    </td>
+                </tr>       
+            </tbody>
+            <tfoot>
+                <button class="btn hover-btn btn-primary" type="submit" ng-click="openAddNewModal()">Add New</button>
+            </tfoot>
+        </table>
+    </accordion-group>
+</accordion>

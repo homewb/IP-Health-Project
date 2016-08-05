@@ -1,0 +1,142 @@
+<div class="row">
+    <div class="widget span2">
+        <div class="widget-content" style="text-align: center">
+            <img ng-src={{userInfo.photo}} style="float: left; margin-bottom: 10px"/>
+            <!-- <img src="img/ive_hero20110204.png" style="float: left; margin-bottom: 10px"/> -->
+            <!--<div id="bio" style="float: left;">-->
+            <h3>{{userInfo.firstname}} {{userInfo.lastname}}</h3>
+            <h5>{{userInfo.position}}</h5>
+            <h5>{{userInfo.department}}</h5>
+            <p>{{userInfo.email}}</p>
+            <p>{{userInfo.phone}}</p>
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="span8">
+        <div class="widget" >
+            <div class="widget-header">
+                <i class="icon-user"></i>
+                <h3>Your Profile</h3>
+            </div> 
+            <!-- /widget-header -->
+            <div class="widget-content">
+                <div collapse="!submitted">
+                    <alert ng-if="showMsg" type="alert.type">{{alert.msg}}</alert>
+                </div>
+                
+                <div class=" " id="formcontrols">
+                    <form id="edit-profile" name="form" class="form-horizontal" role="form" novalidate>
+                        <fieldset>
+                            <!--<img src="img/cook_hero.png"/>-->
+                            <div class="control-group">
+                                <label class="control-label" for="firstname">First Name</label>
+                                <div class="controls">
+                                    <input type="text" name="firstname" class="span4" id="firstname" ng-model="userInfo.firstname" name-characters-validator required />
+                                    <div class="error-color" ng-if="interacted(form.firstname)" ng-messages for="form.firstname.$error">                  
+                                        <ng-message when="required">You did not enter your first name</ng-message>
+                                        <ng-message when="name-characters">Your name must only consist of characters</ng-message>
+                                    </div>
+                                </div> <!-- /controls -->
+                            </div> <!-- /control-group -->
+                            <div class="control-group">
+                                <label class="control-label" for="lastname">Last Name</label>
+                                <div class="controls">
+                                    <input type="text" name="lastname" class="span4" id="lastname" ng-model="userInfo.lastname" name-characters-validator required />
+                                    <div class="error-color" ng-if="interacted(form.lastname)" ng-messages for="form.lastname.$error">
+                                        <ng-message when="required">You did not enter your last name</ng-message>
+                                        <ng-message when="name-characters">Your name must only consist of characters</ng-message>
+                                    </div>
+                                </div> <!-- /controls -->
+                            </div> <!-- /control-group -->
+                            <div class="control-group">
+                                <label class="control-label" for="email">Email Address</label>
+                                <div class="controls">
+                                    <input type="text" class="span4 disabled" id="email" ng-model="userInfo.email" disabled>
+                                </div> <!-- /controls -->
+                            </div> <!-- /control-group -->
+                            <div class="control-group">
+                                <label class="control-label" for="dob">Date of Birth</label>
+                                <div class="controls">
+
+                                    <!-- A third-party Api for date picker  -->
+                                    <!-- <div class="col-md-6" ng-controller="datepickerController">
+                                        <p class="input-group">
+                                            <input type="text" name="time" class="form-control" datepicker-popup="{{format}}" ng-model="userInfo.dob" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                            </span>
+                                        </p>
+                                    </div> -->
+                                    
+                                    <!-- The original date picker -->
+                                    <!-- Note: type="date" is not supported in Internet Explorer. -->
+                                    <input type="date" class="span4" name="dob" id="dob" ng-model="userInfo.birth" date-parser="yyyy-MM-dd" required />
+                                    <div class="error-color" ng-if="interacted(form.dob)" ng-messages for="form.dob.$error">
+                                        <ng-message when="required">Your birthday is either blank or has an incorrect value</ng-message>
+                                    </div>
+                                </div> 
+                                <!-- /controls -->
+                            </div> 
+                            <!-- /control-group -->
+                            <div class="control-group">
+                                <label class="control-label">Address: </label>
+                                <div class="controls">
+                                    <input type="text" class="span4 disabled" id="address" name="address" placeholder="{{address.selected.formatted_address || currentAddress}}" ng-click="drop()" />
+                                    <ui-select ng-show="showAddress" ng-model="address.selected"
+                                         theme="bootstrap"
+                                         ng-disabled="disabled"
+                                         reset-search-input="false"
+                                         style="width: 370px; margin-top: 2px;">
+                                        <ui-select-match placeholder="You must enter and select an address from the list...">{{$select.selected.formatted_address}}</ui-select-match>
+                                        <ui-select-choices repeat="address in addresses track by $index"
+                                             refresh="refreshAddresses($select.search)"
+                                             refresh-delay="0">
+                                            <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+                                        </ui-select-choices>
+                                    </ui-select>
+
+
+
+                                    <!-- <input type="text" class="span4 pull-left address" style="margin-bottom: 15px" id="street" placeholder="Street" >
+                                    <input type="text" class="span2 pull-left address" style="margin-bottom: 15px" id="city" placeholder="City" >
+                                    <input type="text" class="span1 pull-left address" style="margin-bottom: 15px"  id="state" placeholder="State" >
+                                    <input type="text" class="span1 pull-left address" style="margin-bottom: 15px" id="postcode" placeholder="Postcode" > -->
+                                </div> <!-- /controls -->
+                            </div> <!-- /control-group -->
+                            <div class="control-group">
+                                <label class="control-label" for="phone1">Mobile</label>
+                                <div class="controls">
+                                    <input type="text" class="span4" id="phone1" name="mobile" ng-model="userInfo.mobile" ng-maxlength="10" phone-number-validator required />
+                                    <div class="error-color" ng-if="interacted(form.mobile)" ng-messages for="form.mobile.$error">
+                                        <ng-message when="required">You did not enter a phone number</ng-message>
+                                        <ng-message when="phone-numbers">You must enter ten numbers</ng-message>
+                                        <ng-message when="maxlength">Your phone number is too long</ng-message>
+                                    </div>
+                                </div> <!-- /controls -->
+                            </div> <!-- /control-group -->
+                            <div class="control-group">
+                                <label class="control-label" for="phone2">Work Phone</label>
+                                <div class="controls">
+                                    <!-- <input type="text" class="span4" id="phone2" name="phone" ng-model="userInfo.phone" ui-br-phone-number= required /> -->
+                                    <input type="text" class="span4" id="phone2" name="phone" ng-model="userInfo.phone" ng-maxlength="10" phone-number-validator required />
+                                    <div class="error-color" ng-if="interacted(form.phone)" ng-messages for="form.phone.$error">
+                                        <ng-message when="required">You did not enter a phone number</ng-message>
+                                        <ng-message when="phone-numbers">You must enter ten numbers</ng-message>
+                                        <ng-message when="maxlength">Your phone number is too long</ng-message>
+                                    </div>
+                                </div> <!-- /controls -->
+                            </div> <!-- /control-group -->
+                            <br />
+                            <br />
+                            <div class="form-actions">
+                                <button class="btn btn-primary" data-placement="center" data-animation="am-fade-and-scale" data-template="templates/dialogs/submitDialogModal.html" ng-disabled="form.$invalid" bs-modal="modal">Save</button>
+                                <button class="btn" data-placement="center" data-animation="am-fade-and-scale" data-template="templates/dialogs/cancelDialogModal.html" bs-modal="modal">Cancel</button>
+                            </div> <!-- /form-actions -->
+                        </fieldset>
+                    </form>
+                </div>
+            </div> <!-- /widget-content -->
+        </div> <!-- /widget -->
+    </div> <!-- /span8 -->
+</div> <!-- /row -->
+

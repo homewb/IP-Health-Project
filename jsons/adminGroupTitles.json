@@ -1,0 +1,16 @@
+{
+	"state": true,
+	"results": [
+		{
+			"id": "3001",
+			"name": "Programming Group",
+			"numOfPending": "9"
+		},
+
+		{
+			"id": "3002",
+			"name": "Research Group",
+			"numOfPending": "20"
+		}
+	]
+}

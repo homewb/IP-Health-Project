@@ -1,0 +1,71 @@
+
+<div class="row">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-header">
+                <i class="icon-user"></i>
+                <h3>Peer Reveiw Detail</h3>
+            </div> <!-- /widget-header -->
+            <div class="widget-content">
+
+                <!--detail view below-->
+
+                <div id="detail" style="margin-top: 50px">
+                    <div style="text-align: center">
+                        <h2>{{fullName}}</h2>
+                        <!--<h5>Senior Vice President</h5>-->
+                        <!--<h5>Department of Design</h5>-->
+                        <br/>
+                        <p>{{kpiName}}</p>
+                        <p>Average Score:
+                            <rating ng-model="kpiAvgScore" max="5" readonly="true"></rating>
+                        </p>
+                        <br/>
+                    </div>
+
+                    <form name="form" novalidate>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">{{myReview.title}}</div>
+                            <div class="panel-body" >
+                                {{myReview.description}}
+                            </div>
+                            <style>
+                                #reviewTable .name{
+                                    padding-left: 15px;
+                                    vertical-align: middle;
+                                }
+                            </style>
+                            <table id="reviewTable" class="table">
+                                <tr style="border-top:1px solid #e1e1e1;" ng-repeat="row in myReview.rows">
+                                    <th class="span2 name" >{{row.firstname}} {{row.lastname}}</th>
+                                    <td style="text-align: center" class="span3">
+                                        <rating ng-model="row.reviewdata" max="5" readonly="true" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+                                    </td>
+                                    <td class="span7">
+                                        <textarea style="resize: vertical" class="no-margin span7" ng-model="row.reviewcomment" disabled placeholder="Comment has not been finished yet" required></textarea>
+                                    </td>
+                                </tr>
+                            </table>                      
+                        </div>
+                        <div class="panel panel-default no-padding">
+                            <div class="panel-heading">Manager Feedback</div>
+                            <!--<div class="panel-body no-padding" >-->
+                            <textarea style="width: 99%; resize: vertical; min-height: 90px; border: none; margin: 0" ng-model="myReview.feedback.reviewcomment" placeholder="Please write feedback here" required></textarea>
+                            <!--</div>-->
+                        </div>
+                    </form>
+
+                    <div>
+                        <a class="btn" href="#/home/peerreviewadmin" ><i class="icon-caret-left "></i> Back</a>
+                        <button class="btn btn-primary pull-right" data-placement="center" data-animation="am-fade-and-scale" data-template="templates/dialogs/submitDialogModal.html" bs-modal="modal" ng-disabled="form.$invalid">Submit</button>
+                    </div>
+
+                </div>
+                <!--detail view above-->
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
